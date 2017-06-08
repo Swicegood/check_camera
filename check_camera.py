@@ -7,8 +7,8 @@
 #by Jeff Swicegood (Jaga) and Bob Gailer May 1,2017
 
 import urllib.request
-PAGE = urllib.request.urlopen('http://192.168.0.70/zm/index.php',
+page = urllib.request.urlopen('http://192.168.0.70/zm/index.php',
                               b'action=login&view=console&username=admin&password=xxxxxx')
-PAGE2 = PAGE.read()
-for i in range(0, len(PAGE2), 80):
-    print(PAGE2[i:i+80])
+page2 = page.read()
+for i in range(0, len(page2), 80):
+    print(page2[i:i+80])
