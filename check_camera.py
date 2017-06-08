@@ -10,5 +10,4 @@ import urllib.request
 page = urllib.request.urlopen('http://192.168.0.70/zm/index.php',
                               b'action=login&view=console&username=admin&password=xxxxxx')
 page2 = page.read()
-for i in range(0, len(page2), 80):
-    print(page2[i:i+80])
+
