@@ -19,4 +19,10 @@ page = urllib.request.urlopen('http://192.168.0.70/zm/index.php',
 page2 = page.read()
 i = page2.find(prefix) + offset 
 numberofevents = page2[i]
-print(page2[i:i+2])
+
+if (numberofevents - 48):
+    print("OK - There are camera events for today.")
+    exit(0)
+else:
+    print("CRITICAL - No camera events today.")
+    exit(2)
