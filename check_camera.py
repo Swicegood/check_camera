@@ -8,7 +8,9 @@
 
 import urllib.request
 
-PREFIX = b"<td class=\"colEvents\"><a href=\"?view=events&amp;page=1&amp;filter[terms][0][attr]=DateTime&amp;filter[terms][0][op]=%3E%3D&amp;filter[terms][0][val]=-1+day&amp;filter[terms][1][cnj]=and&amp;filter[terms][1][attr]=MonitorId&amp;filter[terms][1][op]=%3D&amp;filter[terms][1][val]=3\" onclick=\"createPopup( '?view=events&amp;page=1&amp;filter[terms][0][attr]=DateTime&amp;filter[terms][0][op]=%3E%3D&amp;filter[terms][0][val]=-1+day&amp;filter[terms][1][cnj]=and&amp;filter[terms][1][attr]=MonitorId&amp;filter[terms][1][op]=%3D&amp;filter[terms][1][val]=3\', 'zmEvents\', 'events\' ); return( false );\">"
+camera_number = "3".encode('ascii')
+
+PREFIX = b"<td class=\"colEvents\"><a href=\"?view=events&amp;page=1&amp;filter[terms][0][attr]=DateTime&amp;filter[terms][0][op]=%3E%3D&amp;filter[terms][0][val]=-1+day&amp;filter[terms][1][cnj]=and&amp;filter[terms][1][attr]=MonitorId&amp;filter[terms][1][op]=%3D&amp;filter[terms][1][val]="+ camera_number + b"\" onclick=\"createPopup( '?view=events&amp;page=1&amp;filter[terms][0][attr]=DateTime&amp;filter[terms][0][op]=%3E%3D&amp;filter[terms][0][val]=-1+day&amp;filter[terms][1][cnj]=and&amp;filter[terms][1][attr]=MonitorId&amp;filter[terms][1][op]=%3D&amp;filter[terms][1][val]="+ camera_number + b"\', 'zmEvents\', 'events\' ); return( false );\">"
 OFFSET = len(PREFIX)
 
 page = urllib.request.urlopen('http://192.168.0.70/zm/index.php',
