@@ -15,12 +15,12 @@ prefix = b"<td class=\"colEvents\"><a href=\"?view=events&amp;page=1&amp;filter[
 offset = len(prefix)
 
 page = urllib.request.urlopen('http://192.168.0.70/zm/index.php',
-                              b'action=login&view=console&username=admin&password=xxxxxx')
+                              b'action=login&view=console&username=admin&password=xxxxxxx')
 page2 = page.read()
 i = page2.find(prefix) + offset 
-numberofevents = page2[i]
+numberofevents = page2[i] - 48   #get ASCII and convert to actual number
 
-if (numberofevents - 48):
+if numberofevents:
     print("OK - There are camera events for today.")
     exit(0)
 else:
