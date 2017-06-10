@@ -17,8 +17,8 @@ offset = len(prefix)
 page = urllib.request.urlopen('http://192.168.0.70/zm/index.php',
                               b'action=login&view=console&username=admin&password=xxxxxxx')
 page2 = page.read()
-i = page2.find(prefix) + offset 
-numberofevents = page2[i] - 48   #get ASCII and convert to actual number
+i = page2.find(prefix) + offset
+numberofevents = page2[i] - 48   #get ASCII and convert to actual number (only 1 signicant digit)
 
 if numberofevents:
     print("OK - There are camera events for today.")
