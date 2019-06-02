@@ -1,4 +1,4 @@
-#!/usr/bin/python2.6
+#!/usr/bin/python2
 
 # This is a Nagios plugin that checks a camera specified by the command line argument
 # it works by parsing the Zoneminder server homepage to find the number of camera events
